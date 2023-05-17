@@ -147,10 +147,10 @@ export default {
         "system": "Ardennes-3",
         "gate": "Atlas-Quanokrim",
         "ring": "Atlas-Line",
-        "headerTitle": "Mirrorsmoke",
-        "headerSubtitle": "Mercenary Company",
-        "subheaderTitle": "Crisis Response",
-        "subheaderSubtitle": "Delta-Echo-Echo-Zulu",
+        "headerTitle": "Union",
+        "headerSubtitle": "41st Marine Division",
+        "subheaderTitle": "First Response Team",
+        "subheaderSubtitle": "Sic semper tyrannis",
       },
       "options":{
         "eventsMarkdownPerMission": true

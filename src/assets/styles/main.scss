@@ -19,8 +19,8 @@ $location-separator: rgba(255, 255, 255, 0.24);
 
 //Mission Pane
 $text-mission-title: rgba(0, 0, 0, 1);
-$text-mission-status: rgba(0, 0, 0, 0.87);
-$mission-start: rgba(109, 109, 109, 1);
+$text-mission-status: rgba(0, 0, 0, 1);
+$mission-start: rgba(0, 0, 0, 1);
 $mission-partial: rgba(88, 34, 102, 1);
 $mission-success: rgba(34, 102, 98, 1);
 $mission-failure: rgba(176, 45, 45, 1);
@@ -445,7 +445,7 @@ section .section-header {
     border-radius: 3px;
     padding: 0.7em;
     width: 135px;
-    color: rgba(212, 175, 55, 0.87);
+    color: $text-mission-status;
     filter: url(#round);
     clip-path: polygon(0 0, 45px 100%, 100% 100%, 100% 0%);
     -webkit-clip-path: polygon(0 0, 45px 100%, 100% 100%, 100% 0%);

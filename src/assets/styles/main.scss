@@ -7,8 +7,8 @@
 //Primary Colors
 $primary: rgba(255, 0, 0, 1);
 $secondary: rgba(255, 255, 255, 1);
-$highlight-hover: rgba(255, 255, 255, 0.3);
-$highlight-active: rgba(255, 0, 0, 0.2);
+$highlight-hover: rgba(255, 0, 0, 0.5);
+$highlight-active: rgba(255, 0, 0, 0.8);
 
 //Primary Text
 $text-headers: rgba(0, 0, 0, 1);
@@ -445,7 +445,7 @@ section .section-header {
     border-radius: 3px;
     padding: 0.7em;
     width: 135px;
-    color: $text-mission-status;
+    color: rgba(212, 175, 55, 0.87);
     filter: url(#round);
     clip-path: polygon(0 0, 45px 100%, 100% 100%, 100% 0%);
     -webkit-clip-path: polygon(0 0, 45px 100%, 100% 100%, 100% 0%);

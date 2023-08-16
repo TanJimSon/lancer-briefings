@@ -95,7 +95,7 @@ export default {
       "missions": [
         {
           "slug": "001",
-          "name": "Hostage Rescue",
+          "name": "Bug-hunt",
           "status": "start"
         },
       ],

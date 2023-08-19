@@ -1,47 +1,35 @@
 <template>
   <Header :header="this.header" />
   <div class="content-container">
-    <section class="section-container" id="missions" style="width:435px; height:714px;">
-      <div class="section-header clipped-medium-backward">
-        <img src="/icons/mission-icon.svg" />
-        <h1>Mission Log</h1>
-      </div>
-      <div class="section-content-container">
-        <h3>Current Assignment</h3>
-        <Markdown :source="current_md" class="markdown" />
-        <h3>Mission List</h3>
-        <div class="mission-list-container">
-          <Mission
-            v-for="item in this.missions"
-            :key="item.slug"
-            :mission="item"
-            :selected="this.mission_slug"
-            @click="selectMission(item)"
-          />
-        </div>
-      </div>
-    </section>
-    <section class="section-container" id="events" style="width:435px; height:714px;">
-      <div class="section-header clipped-medium-backward">
-        <img src="/icons/events-icon.svg" />
-        <h1>Events Log</h1>
-      </div>
-      <div class="section-content-container">
-        <Markdown :source="events" class="markdown" />
-      </div>
-    </section>
-    <section class="section-container" id="pilots" style="width:894px; height:714px;">
-      <div style="height:52px; overflow:hidden;">
+    <MissionView
+      :missions="this.missions"
+      :missionMarkdown="this.current_md"
+      :selected="this.mission_slug"
+      v-on:missionSelected="handleMissionSelected"
+    />
+
+    <EventsView :events="this.events" />
+    <section class="section-container" id="main-tab">
+      <div class="main-tab-header" style="height:52px; overflow:hidden;">
         <div class="section-header clipped-medium-backward-pilot">
-          <img src="/icons/pilot-icon.svg" />
-          <h1>Pilot Roster</h1>
+          <img :src="mainTabIcon" />
+          <h1>{{ mainTabTitle }}</h1>
         </div>
+        <TabButton
+          v-for="item in this.options.panelOptions"
+          :name="item"
+          :hidden="item === this.options.mainPanel"
+          :key="item"
+          @click="selectMainPanel(item)"
+        />
         <div class="rhombus-back">&nbsp;</div>
       </div>
       <div class="section-content-container">
-        <div class="pilot-list-container">
-          <Pilot v-for="item in this.pilots" :key="item.slug" :pilot="item" />
-        </div>
+        <transition name="fade" mode="out-in">
+          <PilotsView v-if="this.options.mainPanel === 'pilot'" :pilots="this.pilots" />
+          <NPCView v-else-if="this.options.mainPanel === 'npc'" :npcs="this.npcs" />
+          <GlossaryView v-else-if="this.options.mainPanel === 'glossary'" />
+        </transition>
       </div>
     </section>
   </div>
@@ -68,23 +56,29 @@
   <audio autoplay>
     <source src="/startup.ogg" type="audio/ogg" />
   </audio>
-  <Footer/>
+  <Footer />
 </template>
 
 <script>
 import Header from './components/layout/Header.vue';
 import Footer from './components/layout/Footer.vue';
-import Mission from './components/Mission.vue';
-import Pilot from './components/Pilot.vue';
-import Markdown from 'vue3-markdown-it';
+import MissionView from './components/layout/MissionView.vue';
+import EventsView from './components/layout/EventsView.vue';
+import PilotsView from './components/layout/PilotsView.vue';
+import NPCView from './components/layout/NPCView.vue';
+import GlossaryView from './components/layout/GlossaryView.vue';
+import TabButton from './components/TabButton.vue'
 
 export default {
   components: {
     Header,
     Footer,
-    Mission,
-    Pilot,
-    Markdown
+    MissionView,
+    EventsView,
+    PilotsView,
+    NPCView,
+    GlossaryView,
+    TabButton,
   },
 
   data() {
@@ -95,7 +89,7 @@ export default {
       "missions": [
         {
           "slug": "001",
-          "name": "Bug-hunt",
+          "name": "Bug-Hunt",
           "status": "start"
         },
       ],
@@ -117,6 +111,14 @@ export default {
           "mech": "Seed of Horus"
         },
       ],
+      "npcs": [
+        {
+          "name": "Lucculan",
+          "affiliation": "Mirrorsmoke Mercenary Company",
+          "pronouns": "She/Her",
+          "notes": "MSMC Officer, Shamshir Squadron"
+        },
+      ],
       "header": {
         "planet": "Hercynia",
         "year": "5014u",
@@ -128,8 +130,14 @@ export default {
         "subheaderTitle": "Crisis Response",
         "subheaderSubtitle": "Shamsir Squad",
       },
-      "options":{
-        "eventsMarkdownPerMission": true
+      "options": {
+        "eventsMarkdownPerMission": true,
+        "mainPanel": "pilot",
+        "panelOptions": [
+          "pilot",
+          "npc",
+          "glossary",
+        ]
       }
     }
   },
@@ -140,14 +148,21 @@ export default {
   },
 
   computed: {
-
+    mainTabTitle() {
+      if (this.options.mainPanel === "pilot") return "Pilot Roster"
+      if (this.options.mainPanel === "npc") return "Persons Registry"
+      if (this.options.mainPanel === "glossary") return "Lexicon"
+    },
+    mainTabIcon() {
+      return `/icons/${this.options.mainPanel}-icon.svg`
+    }
   },
 
   methods: {
-    selectMission(mission) {
+    handleMissionSelected(mission) {
       this.mission_slug = mission.slug;
       this.loadMissionMarkdown()
-      if(this.options.eventsMarkdownPerMission){
+      if (this.options.eventsMarkdownPerMission) {
         this.loadEventsMarkdown();
       }
     },
@@ -165,7 +180,7 @@ export default {
       let self = this;
       let md = "";
 
-      if(self.options.eventsMarkdownPerMission){
+      if (self.options.eventsMarkdownPerMission) {
         md = `/events/${self.mission_slug}.md`
       }
       else {
@@ -178,6 +193,9 @@ export default {
         self.events = client.responseText;
       }
       client.send();
+    },
+    selectMainPanel(panel) {
+      this.options.mainPanel = panel;
     }
   }
 

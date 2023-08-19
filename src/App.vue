@@ -67,7 +67,6 @@ import MissionView from './components/layout/MissionView.vue';
 import EventsView from './components/layout/EventsView.vue';
 import PilotsView from './components/layout/PilotsView.vue';
 import NPCView from './components/layout/NPCView.vue';
-import ClocksView from './components/layout/ClocksView.vue';
 import GlossaryView from './components/layout/GlossaryView.vue';
 import TabButton from './components/TabButton.vue'
 
@@ -80,7 +79,6 @@ export default {
     PilotsView,
     NPCView,
     GlossaryView,
-    ClocksView,
     TabButton,
   },
 
@@ -134,7 +132,6 @@ export default {
         "subheaderTitle": "Crisis Response",
         "subheaderSubtitle": "Shamsir Squadron",
       },
-      "clocks": [
 
       ],
       "options": {
@@ -144,7 +141,6 @@ export default {
           "pilot",
           "npc",
           "glossary",
-          "clock"
         ]
       }
     }
@@ -160,7 +156,6 @@ export default {
       if (this.options.mainPanel === "pilot") return "Pilot Roster"
       if (this.options.mainPanel === "npc") return "Persons Registry"
       if (this.options.mainPanel === "glossary") return "Lexicon"
-      if (this.options.mainPanel === "clock") return "Clocks"
     },
     mainTabIcon() {
       return `/icons/${this.options.mainPanel}-icon.svg`

@@ -29,7 +29,6 @@
           <PilotsView v-if="this.options.mainPanel === 'pilot'" :pilots="this.pilots" />
           <NPCView v-else-if="this.options.mainPanel === 'npc'" :npcs="this.npcs" />
           <GlossaryView v-else-if="this.options.mainPanel === 'glossary'" />
-          <ClocksView v-else-if="this.options.mainPanel === 'clock'" :clocks="this.clocks" />
         </transition>
       </div>
     </section>

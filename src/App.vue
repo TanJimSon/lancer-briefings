@@ -67,7 +67,6 @@ import MissionView from './components/layout/MissionView.vue';
 import EventsView from './components/layout/EventsView.vue';
 import PilotsView from './components/layout/PilotsView.vue';
 import NPCView from './components/layout/NPCView.vue';
-import ClocksView from './components/layout/ClocksView.vue';
 import GlossaryView from './components/layout/GlossaryView.vue';
 import TabButton from './components/TabButton.vue'
 
@@ -80,7 +79,6 @@ export default {
     PilotsView,
     NPCView,
     GlossaryView,
-    ClocksView,
     TabButton,
   },
 
@@ -98,70 +96,28 @@ export default {
       ],
       "pilots": [
         {
-          "callsign": "King",
-          "alias": "Rey Rodriguez",
-          "code": "Rodriguez.Rey:426d13ce-c336-48ed-8f7a-05adec4fda91//NDL-C-SATELLITE-VEIL",
+          "callsign": "Herkules",
+          "alias": "Kanika Bayala",
+          "code": "23c6e286-0c46-483a-81b1-63afcd76601d//NDL-C-OMEGA-KINGMAKER//23c6e286-0c46-483a-81b1-63afcd76601d",
           "corpro": "GMS",
           "frame": "Everest",
-          "mech": "Oscuro"
+          "mech": "Same Time Tomorrow"
         },
         {
-          "callsign": "OsKILLoscope",
-          "alias": "Eutropio Eshbaugh",
-          "code": "Eshbaugh.Eutropio:165eac96-e791-4cb3-934e-018475e9135f//NDL-C-SECOND-TELLURION",
+          "callsign": "𓂀",
+          "alias": "Madoc VII",
+          "code": "457058b5-10b0-4c01-8c49-30acfa595be2//NDL-C-LUNAR-LASH//457058b5-10b0-4c01-8c49-30acfa595be2",
           "corpro": "GMS",
           "frame": "Everest",
-          "mech": "The Anxiety Mechanism"
-        },
-        {
-          "callsign": "Goldleaf",
-          "alias": "Ormander Kellman",
-          "code": "Kellman.Ormander:653de6e9-acff-4ff1-bbd9-e62a84219377//NDL-C-DISCORDANT-CRYSTAL",
-          "corpro": "GMS",
-          "frame": "Everest",
-          "mech": "Ad Aspera"
-        },
-        {
-          "callsign": "ST-2-01",
-          "alias": "Alex Thompson",
-          "code": "Thompson.Alex:72457e6a-9b36-45db-9530-2a9e9fcd47e2//NDL-C-BRASS-MANTLE",
-          "corpro": "GMS",
-          "frame": "Everest",
-          "mech": "Cait Sith"
-        },
-        {
-          "callsign": "Xiv",
-          "alias": "Xiv",
-          "code": "XIV:6e96da55-f522-478c-af2f-de9c89276eb0//NDL-C-BLUE-HIDE",
-          "corpro": "GMS",
-          "frame": "Everest",
-          "mech": "Frank"
+          "mech": "Seed of Horus"
         },
       ],
       "npcs": [
         {
-          "name": "Brava Hadura",
-          "affiliation": "Evergreen",
+          "name": "Lucculan",
+          "affiliation": "Mirrorsmole Mercernary Company",
           "pronouns": "She/Her",
-          "notes": "Captain of the Local Militia"
-        },
-        {
-          "name": "Patience",
-          "affiliation": "Evergreen",
-          "pronouns": "They/Them",
-          "notes": "Colonial Administrator"
-        },
-        {
-          "name": "Edena Ji",
-          "affiliation": "Evergreen",
-          "pronouns": "She/Her",
-          "notes": "Chief Operations Officer, Attaché to Patience"
-        },
-        {
-          "name": "Castor Fielding",
-          "affiliation": "Evergreen",
-          "pronouns": "He/Him",
-          "notes": "Chief Engineer"
+          "notes": "MSMC officer"
         },
       ],
       "header": {
@@ -170,21 +126,11 @@ export default {
         "system": "Ardennes-3",
         "gate": "Atlas-Quanokrim",
         "ring": "Atlas-Line",
-        "headerTitle": "Landmark Colonial",
-        "headerSubtitle": "SSC-Subsidiary",
-        "subheaderTitle": "Crisis Response Team",
-        "subheaderSubtitle": "Recoup Blue",
+        "headerTitle": "Mirrorsmoke",
+        "headerSubtitle": "Mercenary Company",
+        "subheaderTitle": "Crisis Response",
+        "subheaderSubtitle": "Shamsir Squad",
       },
-      "clocks": [
-        {
-          "name": "Defense of Evergreen",
-          "description": "Represents the integrity and readiness of Evergreen's militia and defenses.",
-          "help": "Having more segments filled in will make things easier for the Lancers during later missions.",
-          "color": "#7DBBBB",
-          "value": 0,
-          "max": 6,
-        },
-      ],
       "options": {
         "eventsMarkdownPerMission": true,
         "mainPanel": "pilot",
@@ -192,7 +138,6 @@ export default {
           "pilot",
           "npc",
           "glossary",
-          "clock"
         ]
       }
     }
@@ -208,7 +153,6 @@ export default {
       if (this.options.mainPanel === "pilot") return "Pilot Roster"
       if (this.options.mainPanel === "npc") return "Persons Registry"
       if (this.options.mainPanel === "glossary") return "Lexicon"
-      if (this.options.mainPanel === "clock") return "Clocks"
     },
     mainTabIcon() {
       return `/icons/${this.options.mainPanel}-icon.svg`

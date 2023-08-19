@@ -29,6 +29,7 @@
           <PilotsView v-if="this.options.mainPanel === 'pilot'" :pilots="this.pilots" />
           <NPCView v-else-if="this.options.mainPanel === 'npc'" :npcs="this.npcs" />
           <GlossaryView v-else-if="this.options.mainPanel === 'glossary'" />
+          <ClocksView v-else-if="this.options.mainPanel === 'clock'" :clocks="this.clocks" />
         </transition>
       </div>
     </section>
@@ -66,6 +67,7 @@ import MissionView from './components/layout/MissionView.vue';
 import EventsView from './components/layout/EventsView.vue';
 import PilotsView from './components/layout/PilotsView.vue';
 import NPCView from './components/layout/NPCView.vue';
+import ClocksView from './components/layout/ClocksView.vue';
 import GlossaryView from './components/layout/GlossaryView.vue';
 import TabButton from './components/TabButton.vue'
 
@@ -78,6 +80,7 @@ export default {
     PilotsView,
     NPCView,
     GlossaryView,
+    ClocksView,
     TabButton,
   },
 
@@ -110,13 +113,14 @@ export default {
           "frame": "Everest",
           "mech": "Seed of Horus"
         },
+   
       ],
       "npcs": [
         {
           "name": "Lucculan",
-          "affiliation": "Mirrorsmoke Mercenary Company",
+          "affiliation": "Mirrorsmoke Mercernary Company",
           "pronouns": "She/Her",
-          "notes": "MSMC Officer, Shamshir Squadron"
+          "notes": "MSMC officer assigned to Shamshir Squadron"
         },
       ],
       "header": {
@@ -128,8 +132,18 @@ export default {
         "headerTitle": "Mirrorsmoke",
         "headerSubtitle": "Mercenary Company",
         "subheaderTitle": "Crisis Response",
-        "subheaderSubtitle": "Shamsir Squad",
+        "subheaderSubtitle": "Shamsir Squadron",
       },
+      "clocks": [
+        {
+          "name": "Defense of Evergreen",
+          "description": "Represents the integrity and readiness of Evergreen's militia and defenses.",
+          "help": "Having more segments filled in will make things easier for the Lancers during later missions.",
+          "color": "#7DBBBB",
+          "value": 0,
+          "max": 6,
+        },
+      ],
       "options": {
         "eventsMarkdownPerMission": true,
         "mainPanel": "pilot",
@@ -137,6 +151,7 @@ export default {
           "pilot",
           "npc",
           "glossary",
+          "clock"
         ]
       }
     }
@@ -152,6 +167,7 @@ export default {
       if (this.options.mainPanel === "pilot") return "Pilot Roster"
       if (this.options.mainPanel === "npc") return "Persons Registry"
       if (this.options.mainPanel === "glossary") return "Lexicon"
+      if (this.options.mainPanel === "clock") return "Clocks"
     },
     mainTabIcon() {
       return `/icons/${this.options.mainPanel}-icon.svg`

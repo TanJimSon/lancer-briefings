@@ -129,7 +129,7 @@ export default {
         "headerTitle": "Mirrorsmoke",
         "headerSubtitle": "Mercenary Company",
         "subheaderTitle": "Crisis Response",
-        "subheaderSubtitle": "Shamsir Squad",
+        "subheaderSubtitle": "Shamsir Squadron",
       },
       "options": {
         "eventsMarkdownPerMission": true,

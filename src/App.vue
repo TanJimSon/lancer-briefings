@@ -101,7 +101,7 @@ export default {
           "code": "23c6e286-0c46-483a-81b1-63afcd76601d//NDL-C-OMEGA-KINGMAKER//23c6e286-0c46-483a-81b1-63afcd76601d",
           "corpro": "GMS",
           "frame": "Everest",
-          "mech": "Same Time Tomorrow"
+          "mech": "Eye of Tomorrow"
         },
         {
           "callsign": "𓂀",

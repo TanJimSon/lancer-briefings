@@ -145,12 +145,6 @@ export default {
           "pronouns": "She/Her",
           "notes": "Chief Operations Officer, Attaché to Patience"
         },
-        {
-          "name": "Castor Fielding",
-          "affiliation": "Evergreen",
-          "pronouns": "He/Him",
-          "notes": "Chief Engineer"
-        },
       ],
       "header": {
         "planet": "Hercynia",

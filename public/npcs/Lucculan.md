@@ -1,2 +1,1 @@
-An MSMC officer going by the call sign Lucculan appointed to Shamshir squad to oversee their activities on Hercynia and to serve as a comms officer, this woman bears a stoic and piercing demeanor but every 
-now and then one would can tell something weights on her heavily.
+An MSMC officer going by the call sign Lucculan, she has been appointed to Shamshir squad to oversee their activities on Hercynia and to ensure the squad's comms system is within functional parameters. Lucculan bears a stoic and piercing demeanor that matches her militaristic uniform but every now and then one would can tell something weights on her heavily.

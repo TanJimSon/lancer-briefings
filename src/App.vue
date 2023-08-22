@@ -111,6 +111,14 @@ export default {
           "frame": "Everest",
           "mech": "Seed of Horus"
         },
+        {
+          "callsign": "Raincaller",
+          "alias": "Markus Wright",
+          "code": "826968b0-6ea2-448a-858e-0869243516f7//NDL-C-SIGMA-JUDGE//826968b0-6ea2-448a-858e-0869243516f7",
+          "corpro": "GMS",
+          "frame": "Everest",
+          "mech": "Drizzle"
+        },
       ],
       "npcs": [
         {
@@ -118,6 +126,30 @@ export default {
           "affiliation": "Mirrorsmole Mercernary Company",
           "pronouns": "She/Her",
           "notes": "MSMC officer"
+        },
+        {
+          "name": "Brava Hadura",
+          "affiliation": "Evergreen",
+          "pronouns": "She/Her",
+          "notes": "Captain of the Local Militia"
+        },
+        {
+          "name": "Patience",
+          "affiliation": "Evergreen",
+          "pronouns": "They/Them",
+          "notes": "Colonial Administrator"
+        },
+        {
+          "name": "Edena Ji",
+          "affiliation": "Evergreen",
+          "pronouns": "She/Her",
+          "notes": "Chief Operations Officer, Attaché to Patience"
+        },
+        {
+          "name": "Castor Fielding",
+          "affiliation": "Evergreen",
+          "pronouns": "He/Him",
+          "notes": "Chief Engineer"
         },
       ],
       "header": {

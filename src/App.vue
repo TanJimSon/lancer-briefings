@@ -128,6 +128,14 @@ export default {
           "frame": "Monarch",
           "mech": "Torrent"
         },
+        {
+          "callsign": "Seawolf※",
+          "alias": "Caspian Blake",
+          "code": "7d7ee47e-76fb-4d05-b875-566ba87bae62//NDL-C-STOLEN-KINGMAKER",
+          "corpro": "IPS-N",
+          "frame": "Blackbeard",
+          "mech": "Foolish Wildcard"
+        },
       ],
       "npcs": [
         {

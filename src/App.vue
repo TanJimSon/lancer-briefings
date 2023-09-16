@@ -108,7 +108,7 @@ export default {
           "callsign": "Herkules",
           "alias": "Kanika Bayala",
           "code": "23c6e286-0c46-483a-81b1-63afcd76601d//NDL-C-OMEGA-KINGMAKER",
-          "Corpro": "Harrison Armory",
+          "corpro": "Harrison Armory",
           "frame": "Tokugawa",
           "mech": "Last Word"
         },
@@ -116,7 +116,7 @@ export default {
           "callsign": "𓂀",
           "alias": "Madoc VII",
           "code": "457058b5-10b0-4c01-8c49-30acfa595be2//NDL-C-LUNAR-LASH",
-          "Corpro": "Horus",
+          "corpro": "Horus",
           "frame": "Manticore",
           "mech": "Hand of Horus"
         },
@@ -124,7 +124,7 @@ export default {
           "callsign": "Raincaller",
           "alias": "Markus Wright",
           "code": "826968b0-6ea2-448a-858e-0869243516f7//NDL-C-SIGMA-JUDGE",
-          "Corpro": "Smith-Shimano Corpro",
+          "corpro": "Smith-Shimano Corpro",
           "frame": "Monarch",
           "mech": "Torrent"
         },
@@ -132,7 +132,7 @@ export default {
           "callsign": "Seawolf※",
           "alias": "Caspian Blake",
           "code": "7d7ee47e-76fb-4d05-b875-566ba87bae62//NDL-C-STOLEN-KINGMAKER",
-          "Corpro": "IPS-N",
+          "corpro": "IPS-N",
           "frame": "Blackbeard",
           "mech": "Foolish Wildcard"
         },

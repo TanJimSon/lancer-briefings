@@ -116,7 +116,7 @@ export default {
           "callsign": "𓂀",
           "alias": "Madoc VII",
           "code": "457058b5-10b0-4c01-8c49-30acfa595be2//NDL-C-LUNAR-LASH",
-          "???": "Horus",
+          "Corpro": "Horus",
           "frame": "Manticore",
           "mech": "Hand of Horus"
         },

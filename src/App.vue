@@ -101,6 +101,11 @@ export default {
         {
           "slug": "003",
           "name": "Floodgate",
+          "status": "success"
+        },
+        {
+          "slug": "004",
+          "name": "Double Harmony",
           "status": "start"
         },
       ],
